@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>最初RVC变声器开源版本是如何使用的 | FORWORLD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="RVC初代是不自带虚拟声卡的，所以你需要安装一个Voicemeeter,作为虚拟声卡来使用。还有一个RVC的原版。这两个在各种分享的百度网盘资料上面就可以找到。 VoicemeeterRVC变声器–点击go-realtimebat文件，然后就可以看到一个python程序在运行，过一会界面就出来了————————————————————————————————————————————————————">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最初RVC变声器开源版本是如何使用的">
+<meta property="og:url" content="https://ailingmeng.github.io/gitsovit/index.html">
+<meta property="og:site_name" content="FORWORLD">
+<meta property="og:description" content="RVC初代是不自带虚拟声卡的，所以你需要安装一个Voicemeeter,作为虚拟声卡来使用。还有一个RVC的原版。这两个在各种分享的百度网盘资料上面就可以找到。 VoicemeeterRVC变声器–点击go-realtimebat文件，然后就可以看到一个python程序在运行，过一会界面就出来了————————————————————————————————————————————————————">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ailingmeng.github.io/image-9.png">
+<meta property="og:image" content="https://ailingmeng.github.io/image-10.png">
+<meta property="og:image" content="https://ailingmeng.github.io/image-11.png">
+<meta property="article:published_time" content="2024-11-18T18:01:46.395Z">
+<meta property="article:modified_time" content="2024-11-18T18:01:46.395Z">
+<meta property="article:author" content="ailingmeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ailingmeng.github.io/image-9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="FORWORLD" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">FORWORLD</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ailingmeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-gitsovit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/gitsovit/" class="article-date">
+  <time class="dt-published" datetime="2024-11-18T18:01:46.395Z" itemprop="datePublished">2024-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      最初RVC变声器开源版本是如何使用的
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>RVC初代是不自带虚拟声卡的，所以你需要安装一个Voicemeeter,作为虚拟声卡来使用。还有一个RVC的原版。<br>这两个在各种分享的百度网盘资料上面就可以找到。</p>
+<p>Voicemeeter<br><img src="/image-9.png" alt="alt text"><br>RVC变声器<br><img src="/image-10.png" alt="alt text">–点击go-realtimebat文件，然后就可以看到一个python程序在运行，过一会界面就出来了<br>——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————<br>《RVC变声器细节》</p>
+<p>点开RVC软件可以看到<br><img src="/image-11.png" alt="alt text"><br>可以看到初代界面配置内容其实就跟各种变种版的配置内容是一样的。<br>变种版的也就套了个皮</p>
+<p>这里我们设置调整好路径，不要有中文，然后将输入配置为原麦克风，将输出配置为虚拟声卡的input，也就是Voicemeeter Input (VB-Audio Voi</p>
+<p>淡入淡出是指的是你说话的尾音，性别因子和检索默认就行了，不用管，直接两个0，采样频率看电脑配置，3060，0.4，0.5差不多<br>采样频率和额外推理时长，在乘以1000后，都大于推理的延迟，额外推理时长3.0差不多。</p>
+<p>剩下的配置都一样，一样都是开始音频转换，然后RVC本体可以点击输入监听直接就监听声音了，然后还可以点击输出变声听到变声后的声音。</p>
+<p>这里你可能疑问底膜文件为什么没有在分享里面看到，这个是不重要的，随便用一个就行了。</p>
+<p>——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————<br>《声卡细节》</p>
+<p>就两个通道重要，在input1(原麦克风) 和 A1（原扬声器） 的通道，分别选择MME里面的原本麦克风和原版扬声器。</p>
+<p>然后就只要看input1和virtualput（虚拟声卡输出结果）就行了，这里面的A和B就是指发给自己听和发送给别人听，这里就点上虚拟声卡输出的B就好了</p>
+<p>——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————<br>《最后》</p>
+<p>RVC软件还是比较吃配置的，因此最好在云端部署，这样不会占用电脑的资源。<br>你的声音效果不好，很可能是因为你在本地运行有延迟。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ailingmeng.github.io/gitsovit/" data-id="cm3nc1rin0001etqb04cxbd72" data-title="最初RVC变声器开源版本是如何使用的" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/FIRST/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          DREAM FROM THERE
+        
+      </div>
+    </a>
+  
+  
+    <a href="/hello-template/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">软件利用教程-如何利用开源软件的RVC模型成为典中典的骗刀妹</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/FIRST/">DREAM FROM THERE</a>
+          </li>
+        
+          <li>
+            <a href="/gitsovit/">最初RVC变声器开源版本是如何使用的</a>
+          </li>
+        
+          <li>
+            <a href="/hello-template/">软件利用教程-如何利用开源软件的RVC模型成为典中典的骗刀妹</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 ailingmeng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
